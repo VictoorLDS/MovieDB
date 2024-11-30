@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #fff;
+  }
+  
+  .movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .movie-card {
+    background-color: #1f1f1f;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .poster {
+    width: 100%;
+    border-radius: 4px;
+  }
+
+  .rated {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .movie-card h2 {
+    font-size: 1.2em;
+    margin: 10px 0;
+  }
+  header {
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(131, 56, 228);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  header nav {
+    margin-top: 10px;
+  }
+  
+  header button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    background-color: #272627;
+    color: #654ae0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  header button:hover {
+    background-color: #c2c2c2;
+    color: #121212;
+  }
+
+  #title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #title-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #search-frame{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #search-frame input {
+    padding: 12px 20px;
+    width: 50%;
+    max-width: 400px;
+    border: 1px solid #555; /* Cor da borda */
+    border-radius: 25px; /* Borda arredondada */
+    background-color: #1f1f1f; /* Fundo escuro */
+    color: #fff; /* Texto claro */
+    font-size: 16px; /* Tamanho do texto */
+    outline: none; /* Remove a borda azul ao focar */
+    transition: all 0.3s ease; /* Transições suaves */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+  }
+  
+  #search-frame input:focus {
+    border-color: #925af8; /* Destaque laranja ao focar */
+    box-shadow: 0 6px 12px rgba(145, 102, 216, 0.4); /* Sombra maior */
+  }
+  
+  #search-frame input::placeholder {
+    color: #aaa; /* Cor do texto placeholder */
+    font-style: italic; /* Estilo do texto placeholder */
+  }
+
+  .search-text{
+    display: flex;
+    text-align: center;
+  }
+  
+  

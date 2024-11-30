@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FilmesDB</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>FilmesDB</h1>
+      <nav>
+        <button @click="currentPage = 'home'">Home</button>
+        <button @click="currentPage = 'about'">Sobre</button>
+        <button @click="currentPage = 'contact'">Fale Conosco</button>
+      </nav>
+    </header>
+    
+    <main>
+      <div v-if="currentPage === 'home'">
+        <div id="title">
+        <h2>Bem-vindo ao FilmesDB!</h2>
+      </div>
+        <p id="title-text">Explore os filmes mais populares ou busque seus favoritos.</p>
+        <div id="search-frame">
+        <input 
+          type="text" 
+          v-model="searchQuery" 
+          placeholder="Busque por um filme..." 
+          @keyup.enter="fetchMovies"
+        />
+        </div>
+        <div class="search-text" v-if="loading">Carregando...</div>
+        <div v-else class="movies-grid">
+          <div 
+            class="movie-card" 
+            v-for="movie in movies" 
+            :key="movie.id"
+          >
+            <img class="poster"
+              :src="'https://image.tmdb.org/t/p/w200' + movie.poster_path" 
+              :alt="movie.title"
+            />
+            <h2>{{ movie.title }}</h2>
+            <p>Lançamento: {{ movie.release_date }}</p>
+            <p>Nota: {{ movie.vote_average }}</p>
+            <div v-if="movie.adult">
+              <img class="rated" src="maior18.png" alt=""/>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div v-if="currentPage === 'about'">
+        <h2>Sobre o MovieDB</h2>
+        <p>
+          O MovieDB é um site dedicado a trazer informações detalhadas sobre os filmes mais recentes, populares e clássicos.
+          Ele utiliza a API do <strong>The Movie Database (TMDb)</strong> para fornecer dados atualizados e precisos sobre
+          títulos de filmes, datas de lançamento, resumos e muito mais.
+        </p>
+        <p>
+          Nosso objetivo é conectar amantes de cinema com as informações que eles precisam para explorar o mundo do entretenimento.
+        </p>
+        <p>
+          Este projeto foi desenvolvido utilizando <strong>Vue.js</strong> via CDN, com <strong>Axios</strong> para a integração com a API.
+        </p>
+        <p>
+          Sinta-se à vontade para navegar e explorar o MovieDB!
+        </p>
+      </div>
+    </main>
+  </div>
+  
+  <script src="app.js"></script>
+</body>
+</html>
