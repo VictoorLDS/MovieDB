@@ -10,17 +10,38 @@
 </head>
 <body>
   <div id="app">
-    <header>
-      <h1>FilmesDB</h1>
-      <nav>
+    <main>
+      <nav class="navbar">
         <button @click="currentPage = 'home'">Home</button>
         <button @click="currentPage = 'about'">Sobre</button>
         <button @click="currentPage = 'contact'">Fale Conosco</button>
       </nav>
-    </header>
-    
-    <main>
       <div v-if="currentPage === 'home'">
+        <section class="hero-section">
+          <div class="container">
+            <img src="batmanlogo.png" alt="">
+            <div class="infos">
+              <div class="badge">
+                <span>2020</span>
+              </div>
+              <div class="badge">
+                <span>18</span>
+              </div>
+               <div class="badge">
+                 <span>1h 22min</span>
+                </div>
+                <div class="badge">
+  
+                  <span>action</span>
+                </div>
+            </div>
+            <p>Após dois anos espreitando as ruas como Batman, Bruce Wayne se encontra nas profundezas mais sombrias de Gotham City. Com poucos aliados confiáveis, o vigilante solitário se estabelece como a personificação da vingança para a população.</P>
+            <div class="buttons">
+              <button class="primary-btn">Ver Mais</button>
+              <a href="https://www.youtube.com/watch?v=rsQEor4y2hg"><button class="secondary-btn"> >Assistir trailer</button></a>
+            </div>
+          </div>
+        </section>
         <div id="title">
         <h2>Bem-vindo ao FilmesDB!</h2>
       </div>
@@ -55,21 +76,34 @@
       </div>
       
       <div v-if="currentPage === 'about'">
+        <div class="aboutpage">
         <h2>Sobre o MovieDB</h2>
         <p>
-          O MovieDB é um site dedicado a trazer informações detalhadas sobre os filmes mais recentes, populares e clássicos.
-          Ele utiliza a API do <strong>The Movie Database (TMDb)</strong> para fornecer dados atualizados e precisos sobre
-          títulos de filmes, datas de lançamento, resumos e muito mais.
-        </p>
-        <p>
+          O MovieDB é um site dedicado a trazer informações sobre os seus filmes favoritos. Utilizamos a API publica TMDB para trazer as informações que os fãs desejam.
           Nosso objetivo é conectar amantes de cinema com as informações que eles precisam para explorar o mundo do entretenimento.
         </p>
         <p>
-          Este projeto foi desenvolvido utilizando <strong>Vue.js</strong> via CDN, com <strong>Axios</strong> para a integração com a API.
+          Sinta-se à vontade para navegar e explorar o MovieDB, o SEU portal de filmes!
         </p>
-        <p>
-          Sinta-se à vontade para navegar e explorar o MovieDB!
-        </p>
+      </div>
+      </div>
+
+      <div v-if="currentPage === 'contact'">
+
+        <div class="">
+          <form action="enviar_formulario.php" method="POST">
+              <label for="nome">Nome:</label>
+              <input type="text" id="nome" name="nome" required placeholder="Digite seu nome">
+  
+              <label for="email">E-mail:</label>
+              <input type="email" id="email" name="email" required placeholder="Digite seu e-mail">
+  
+              <label for="mensagem">Mensagem:</label>
+              <textarea id="mensagem" name="mensagem" rows="6" required placeholder="Digite sua mensagem"></textarea>
+  
+              <button type="submit">Enviar Mensagem</button>
+          </form>
+      </div>
       </div>
     </main>
   </div>

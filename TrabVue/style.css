@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Ubuntu", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #121212;
+    background-color: #080808;
     color: #fff;
   }
   
@@ -34,31 +36,53 @@ body {
     font-size: 1.2em;
     margin: 10px 0;
   }
-  header {
+  nav {
     text-align: center;
     padding: 20px;
-    background-color: rgb(131, 56, 228);
-    display: flex;
-    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0);
+    display: inline;
     align-items: center;
-  }
-  
-  header nav {
     margin-top: 10px;
   }
   
-  header button {
+  nav button {
     padding: 10px 20px;
     margin: 0 5px;
     border: none;
     background-color: #272627;
-    color: #654ae0;
+    color: #e2e2e2;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
   }
   
-  header button:hover {
+  .hero-section .primary-btn {
+    background-color: red;
+    border-radius: 7px;
+    padding: 9px 46px;
+    border: none;
+    color: white;
+  }
+
+  .hero-section .primary-btn:hover {
+    background-color: #00000000;
+    border: red solid;
+    color: red;
+  }
+
+  .hero-section .secondary-btn {
+    background-color: rgba(255, 0, 0, 0);
+    border-radius: 7px;
+    padding: 9px 46px;
+    border: none;
+    color: white;
+  }
+
+  .hero-section .secondary-btn:hover {
+    color: red;
+  }
+
+  nav button:hover {
     background-color: #c2c2c2;
     color: #121212;
   }
@@ -95,8 +119,8 @@ body {
   }
   
   #search-frame input:focus {
-    border-color: #925af8; /* Destaque laranja ao focar */
-    box-shadow: 0 6px 12px rgba(145, 102, 216, 0.4); /* Sombra maior */
+    border-color: #e2e2e2; /* Destaque laranja ao focar */
+    box-shadow: 0 6px 12px rgba(160, 160, 160, 0.4); /* Sombra maior */
   }
   
   #search-frame input::placeholder {
@@ -108,5 +132,132 @@ body {
     display: flex;
     text-align: center;
   }
+
+  .navbar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .hero-section {
+      margin: 0;
+      border-radius: 0;
+      background: url(https://m.media-amazon.com/images/S/pv-target-images/81ef275effa427553a847bc220bebe1dc314b2e79d00333f94a6bcadd7cce851.jpg) no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      height: 100vh;
+    }
+    .hero-section h1 , .hero-section span, .hero-section p {
+    color: white;
+  }
+
+  .hero-section .infos {
+    display: flex;
+  }
+
+  .hero-section .infos .badge:nth-child(1) {
+    border: none;
+  }
+
+  .hero-section .infos .badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 10px;
+    border-left: 1px solid white;
+  }
+
+  .hero-section .infos .badge:nth-child(2) span {
+    background-color: black;
+    padding: 5px;
+    border-radius: 7px;
+  }
   
+  .hero-section img {
+      height: 200px;
+      width: auto;
+  }
+
+  .hero-section p {
+    line-height: 28px;
+  }
+
+  .hero-section .container {
+    width: 100%;
+    background: linear-gradient(270deg, rgb(0 0 0 / 65%) 0%, #000000ad 65.54%);
+    background-blend-mode: multiply;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-direction: column;
+    padding: 0 85px;
+    align-items: flex-start;
+  }
   
+  .hero-section .text {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .hero-section p {
+    width: 500px;
+    margin: 7px 0;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .hero-section div {
+      padding: 0 50px;
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .hero-section {
+      background-attachment: local;
+  
+    }
+  
+    .hero-section .text {
+      position: relative;
+      z-index: 1;
+    }
+  
+    .hero-section p {
+      color: var(--white);
+      margin: 7px 0;
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .hero-section p {
+      width: auto;
+    }
+  
+    .hero-section div {
+      padding: 0 15px;
+    }
+  }
+  
+  @media only screen and (max-width: 425px) {
+    .hero-section div {
+      padding: 0 10px;
+    }
+  }
+  
+  @media only screen and (min-width: 768px) {}
+  
+  @media only screen and (min-width: 992px) {}
+  
+  @media only screen and (min-width: 1200px) {}
+
+  .aboutpage{
+    margin-left: 20px;
+    padding: 20px;
+  }
+
+  .aboutpage h2{
+    display: flex;
+    justify-content: center;
+  }
