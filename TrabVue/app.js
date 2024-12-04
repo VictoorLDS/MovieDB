@@ -6,33 +6,33 @@ new Vue({
       searchQuery: "",
       movies: [],
       loading: false,
-      error: null,
+      url: ""
     },
     methods: {
       fetchMovies() {
-        if (!this.searchQuery) {
-          this.error = alert("Insira uma palavra para busca.");
-          return;
-        }
-  
         this.loading = true;
-        this.error = null;
-  
-        axios.get(`https://api.themoviedb.org/3/search/movie`, {
+        if (this.searchQuery === "") {
+          axios.get(`https://api.themoviedb.org/3/movie/popular`, {
             params: {
-              api_key: this.apiKey,
-              query: this.searchQuery,
+              api_key: this.apiKey
             },
           })
           .then(response => {
-            this.movies = response.data.results;
+            this.movies = response.data.results
+            this.loading = false
           })
-          .catch(error => {
-            this.error = "Erro ao buscar filmes. Tente novamente.";
-          })
-          .finally(() => {
-            this.loading = false;
-          });
+          } else {
+            axios.get(`https://api.themoviedb.org/3/search/movie`, {
+              params: {
+                api_key: this.apiKey,
+                query: this.searchQuery,
+              },
+            })
+            .then(response => {
+              this.movies = response.data.results;
+              this.loading = false;
+            })
+          }
       },
   }});
   
