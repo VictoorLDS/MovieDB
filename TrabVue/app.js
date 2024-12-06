@@ -4,8 +4,14 @@ new Vue({
       apiKey: "cb3dbef042c49e1541724a965550514d",
       currentPage: "home",
       searchQuery: "",
+      message: 'Mensagem enviada!',
       movies: [],
       loading: false,
+      toast: {
+        visible: false,
+        message: 'Mensagem enviada!',
+        type: "success"
+      },
       url: ""
     },
     methods: {
@@ -34,5 +40,16 @@ new Vue({
             })
           }
       },
+      showToast() {
+        this.toast.message;
+        this.toast.visible = true
+        setTimeout(() => {
+          this.toast.visible = false;
+        }, 3000);
+      },
+      sendMessage() {
+         this.currentPage = "home";
+         this.showToast()
+      }
   }});
   

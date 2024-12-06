@@ -108,24 +108,24 @@ body {
     padding: 12px 20px;
     width: 50%;
     max-width: 400px;
-    border: 1px solid #555; /* Cor da borda */
-    border-radius: 25px; /* Borda arredondada */
-    background-color: #1f1f1f; /* Fundo escuro */
-    color: #fff; /* Texto claro */
-    font-size: 16px; /* Tamanho do texto */
-    outline: none; /* Remove a borda azul ao focar */
-    transition: all 0.3s ease; /* Transições suaves */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+    border: 1px solid #555;
+    border-radius: 25px;
+    background-color: #1f1f1f;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   
   #search-frame input:focus {
-    border-color: #e2e2e2; /* Destaque laranja ao focar */
-    box-shadow: 0 6px 12px rgba(160, 160, 160, 0.4); /* Sombra maior */
+    border-color: #e2e2e2;
+    box-shadow: 0 6px 12px rgba(160, 160, 160, 0.4);
   }
   
   #search-frame input::placeholder {
-    color: #aaa; /* Cor do texto placeholder */
-    font-style: italic; /* Estilo do texto placeholder */
+    color: #aaa;
+    font-style: italic;
   }
 
   .search-text{
@@ -264,9 +264,11 @@ body {
 
 form {
   background-color: #1f1f1f;
-  padding: 30px;
+  padding: 60px;
+  justify-content: center;
+  align-items: center;
   border-radius: 8px;
-  max-width: 600px;
+  max-width: 700px;
   margin: 20px auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
@@ -282,7 +284,8 @@ form label {
 form input[type="text"],
 form input[type="email"],
 form textarea {
-  width: 100%;
+  width: -webkit-fill-available;
+  width: -moz-available;
   padding: 10px 15px;
   margin-bottom: 20px;
   border: 1px solid #555;
@@ -333,4 +336,25 @@ form button:active {
   form button {
     font-size: 14px;
   }
+}
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+.toast.success {
+  background-color: #4caf50;
+}
+.toast.error {
+  background-color: #f44336;
+}
+.toast.info {
+  background-color: #2196f3;
 }

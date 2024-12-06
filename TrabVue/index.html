@@ -19,6 +19,9 @@
       <div v-if="currentPage === 'home'">
         <section class="hero-section">
           <div class="container">
+            <div v-if="toast.visible" :class="['toast', toast.type]">
+              {{ toast.message }}
+            </div>
             <img src="batmanlogo.png" alt="">
             <div class="infos">
               <div class="badge">
@@ -91,7 +94,7 @@
       <div v-if="currentPage === 'contact'">
 
         <div class="">
-          <form action="enviar_formulario.php" method="POST">
+         <form @submit.prevent="sendMessage">
               <label for="nome">Nome:</label>
               <input type="text" id="nome" name="nome" required placeholder="Digite seu nome">
   
@@ -101,7 +104,7 @@
               <label for="mensagem">Mensagem:</label>
               <textarea id="mensagem" name="mensagem" rows="6" required placeholder="Digite sua mensagem"></textarea>
   
-              <button type="submit">Enviar Mensagem</button>
+              <button @click="sendMessage">Enviar Mensagem</button>
           </form>
       </div>
       </div>
